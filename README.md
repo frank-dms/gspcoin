@@ -1,0 +1,2 @@
+# gspcoin
+GSPCOIN DIGITAL CURRENCY

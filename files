@@ -1,0 +1,179 @@
+bitcoinrpc.cpp:            "Stop FooCoin server.");
+bitcoinrpc.cpp:    return "FooCoin server has now stopped running!";
+bitcoinrpc.cpp:            "Returns a new FooCoin address for receiving payments.  "
+bitcoinrpc.cpp:            "Returns the current FooCoin address for receiving payments to this account.");
+bitcoinrpc.cpp:            "setaccount <foocoin address> <account>\n"
+bitcoinrpc.cpp:        throw JSONRPCError(-5, "Invalid FooCoin address");
+bitcoinrpc.cpp:            "getaccount <foocoin address>\n"
+bitcoinrpc.cpp:        throw JSONRPCError(-5, "Invalid FooCoin address");
+bitcoinrpc.cpp:            "sendtoaddress <foocoin address> <amount> [comment] [comment-to]\n"
+bitcoinrpc.cpp:        throw JSONRPCError(-5, "Invalid FooCoin address");
+bitcoinrpc.cpp:            "signmessage <foocoin address> <message>\n"
+bitcoinrpc.cpp:            "verifymessage <foocoin address> <signature> <message>\n"
+bitcoinrpc.cpp:            "getreceivedbyaddress <foocoin address> [minconf=1]\n"
+bitcoinrpc.cpp:            "Returns the total amount received by <foocoin address> in transactions with at least [minconf] confirmations.");
+bitcoinrpc.cpp:    // FooCoin address
+bitcoinrpc.cpp:        throw JSONRPCError(-5, "Invalid FooCoin address");
+bitcoinrpc.cpp:            "sendfrom <fromaccount> <to foocoin address> <amount> [minconf=1] [comment] [comment-to]\n"
+bitcoinrpc.cpp:        throw JSONRPCError(-5, "Invalid FooCoin address");
+bitcoinrpc.cpp:            throw JSONRPCError(-5, string("Invalid FooCoin address:")+s.name_);
+bitcoinrpc.cpp:            "each key is a FooCoin address or hex-encoded public key\n"
+bitcoinrpc.cpp:        // Case 1: FooCoin address and we have full public key:
+bitcoinrpc.cpp:    return "wallet encrypted; FooCoin server stopping, restart to run with encrypted wallet";
+bitcoinrpc.cpp:            "validateaddress <foocoin address>\n"
+bitcoinrpc.cpp:            "Return information about <foocoin address>.");
+bitcoinrpc.cpp:        throw JSONRPCError(-9, "FooCoin server is not connected!");
+bitcoinrpc.cpp:        throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
+bitcoinrpc.cpp:        throw JSONRPCError(-9, "FooCoin server is not connected!");
+bitcoinrpc.cpp:        throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
+bitcoinrpc.cpp:            throw JSONRPCError(-9, "FooCoin server is not connected!");
+bitcoinrpc.cpp:            throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
+bitcoinrpc.cpp:      << "User-Agent: foocoin-json-rpc/" << FormatFullVersion() << "\r\n"
+bitcoinrpc.cpp:            "Server: foocoin-json-rpc/%s\r\n"
+bitcoinrpc.cpp:            "Server: foocoin-json-rpc/%s\r\n"
+bitcoinrpc.cpp:// JSON-RPC protocol.  FooCoin speaks version 1.0 for maximum compatibility,
+bitcoinrpc.cpp:        string strWhatAmI = "To use foocoin";
+bitcoinrpc.cpp:              "rpcuser=foocoinrpc\n"
+init.cpp:        printf("FooCoin exited\n\n");
+init.cpp:            // First part of help message is specific to FooCoin server / RPC client
+init.cpp:            std::string strUsage = _("FooCoin version") + " " + FormatFullVersion() + "\n\n" +
+init.cpp:                  "  foocoin [options]                     " + "\n" +
+init.cpp:                  "  foocoin [options] <command> [params]  " + _("Send command to -server or foocoin") + "\n" +
+init.cpp:                  "  foocoin [options] help                " + _("List commands") + "\n" +
+init.cpp:                  "  foocoin [options] help <command>      " + _("Get help for a command") + "\n";
+init.cpp:            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "foocoin:"))
+init.cpp:    uiInterface.ThreadSafeMessageBox(str, _("FooCoin"), CClientUIInterface::OK | CClientUIInterface::MODAL);
+init.cpp:    uiInterface.ThreadSafeMessageBox(str, _("FooCoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+init.cpp:        "  -conf=<file>           " + _("Specify configuration file (default: foocoin.conf)") + "\n" +
+init.cpp:        "  -pid=<file>            " + _("Specify pid file (default: foocoin.pid)") + "\n" +
+init.cpp:/** Initialize FooCoin.
+init.cpp:    // Make sure only a single foocoin process is using the data directory.
+init.cpp:        return InitError(strprintf(_("Cannot obtain a lock on data directory %s.  FooCoin is probably already running."), GetDataDir().string().c_str()));
+init.cpp:    printf("FooCoin version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
+init.cpp:        fprintf(stdout, "FooCoin server starting\n");
+init.cpp:    // requested to kill foocoin-qt during the last operation. If so, exit.
+init.cpp:            strErrors << _("Error loading wallet.dat: Wallet requires newer version of FooCoin") << "\n";
+init.cpp:            strErrors << _("Wallet needed to be rewritten: restart FooCoin to complete") << "\n";
+irc.cpp:            Send(hSocket, "JOIN #foocoin2TEST3\r");
+irc.cpp:            Send(hSocket, "WHO #foocoin2TEST3\r");
+irc.cpp:            // randomly join #foocoin00-#foocoin99
+irc.cpp:            Send(hSocket, strprintf("JOIN #foocoin2%02d\r", channel_number).c_str());
+irc.cpp:            Send(hSocket, strprintf("WHO #foocoin2%02d\r", channel_number).c_str());
+main.cpp:const string strMessageMagic = "FooCoin Signed Message:\n";
+main.cpp:static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // FooCoin: 1 days
+main.cpp:static const int64 nTargetSpacing = 120; // FooCoin: 2 minute blocks
+main.cpp:    // fMiner is true when called from the internal foocoin miner
+main.cpp:        uiInterface.ThreadSafeMessageBox(strMessage, "FooCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+makefile.linux-mingw:all: foocoin.exe
+makefile.linux-mingw:foocoin.exe: $(OBJS:obj/%=obj/%)
+makefile.linux-mingw:test_foocoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+makefile.linux-mingw:	-rm -f foocoin.exe
+makefile.linux-mingw:	-rm -f test_foocoin.exe
+makefile.mingw:all: foocoin.exe
+makefile.mingw:foocoin.exe: $(OBJS:obj/%=obj/%)
+makefile.mingw:test_foocoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+makefile.mingw:	-del /Q foocoin test_foocoin
+makefile.osx:# Mac OS X makefile for foocoin
+makefile.osx:# Build STATIC if you are redistributing the foocoin binary
+makefile.osx:all: foocoin
+makefile.osx:foocoin: $(OBJS:obj/%=obj/%)
+makefile.osx:test_foocoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+makefile.osx:	-rm -f foocoin test_foocoin
+makefile.unix:all: foocoind
+makefile.unix:foocoind: $(OBJS:obj/%=obj/%)
+makefile.unix:test_foocoind: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+makefile.unix:	-rm -f foocoind test_foocoind
+net.cpp:            strError = strprintf(_("Unable to bind to %s on this computer. FooCoin is probably already running."), addrBind.ToString().c_str());
+qt/sendcoinsentry.cpp:    ui->payTo->setPlaceholderText(tr("Enter a FooCoin address (they start with an 'm')"));
+qt/bitcoin.cpp:    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occured. FooCoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+qt/bitcoin.cpp:        if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+qt/bitcoin.cpp:    app.setOrganizationName("FooCoin");
+qt/bitcoin.cpp:        app.setApplicationName("foocoin-qt-testnet");
+qt/bitcoin.cpp:        app.setApplicationName("foocoin-qt");
+qt/bitcoin.cpp:                    if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+qt/rpcconsole.cpp:    message(CMD_REPLY, (tr("Welcome to the FooCoin RPC console.") + "<br>" +
+qt/qtipcserver.cpp:        // Make sure we don't lose any foocoin: URIs
+qt/editaddressdialog.cpp:                tr("The entered address \"%1\" is not a valid FooCoin address.").arg(ui->addressEdit->text()),
+qt/miningpage.cpp:        reportToList("Miner failed to start. Make sure you have the minerd executable and libraries in the same directory as foocoin-qt.", ERROR, NULL);
+qt/guiutil.h:/** Utility functions used by the foocoin-qt UI.
+qt/guiutil.h:    // Parse "foocoin:" URI into recipient object, return true on succesful parsing
+qt/bitcoingui.cpp:    setWindowTitle(tr("FooCoin") + " - " + tr("Wallet"));
+qt/bitcoingui.cpp:    sendCoinsAction->setToolTip(tr("Send coins to a FooCoin address"));
+qt/bitcoingui.cpp:    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About FooCoin"), this);
+qt/bitcoingui.cpp:    aboutAction->setToolTip(tr("Show information about FooCoin"));
+qt/bitcoingui.cpp:    optionsAction->setToolTip(tr("Modify configuration options for FooCoin"));
+qt/bitcoingui.cpp:    toggleHideAction = new QAction(QIcon(":/icons/bitcoin"), tr("Show/Hide &FooCoin"), this);
+qt/bitcoingui.cpp:    toggleHideAction->setToolTip(tr("Show or hide the FooCoin window"));
+qt/bitcoingui.cpp:                trayIcon->setToolTip(tr("FooCoin client") + QString(" ") + tr("[testnet]"));
+qt/bitcoingui.cpp:    trayIcon->setToolTip(tr("FooCoin client"));
+qt/bitcoingui.cpp:        // Click on system tray icon triggers "show/hide FooCoin"
+qt/bitcoingui.cpp:    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to FooCoin network", "", count));
+qt/bitcoingui.cpp:        labelMiningIcon->setToolTip(tr("Mining FooCoin at %1 hashes per second").arg(hashrate));
+qt/bitcoingui.cpp:        labelMiningIcon->setToolTip(tr("Not mining FooCoin"));
+qt/bitcoingui.cpp:            notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid FooCoin address or malformed URI parameters."));
+qt/bitcoingui.cpp:        notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid FooCoin address or malformed URI parameters."));
+qt/askpassphrasedialog.cpp:                 tr("WARNING: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR foocoinS</b>!\nAre you sure you wish to encrypt your wallet?"),
+qt/askpassphrasedialog.cpp:                                         tr("FooCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your foocoin from being stolen by malware infecting your computer."));
+qt/forms/overviewpage.ui:             <string>The displayed information may be out of date. Your wallet automatically synchronizes with the FooCoin network after a connection is established, but this process has not completed yet.</string>
+qt/forms/overviewpage.ui:             <string>The displayed information may be out of date. Your wallet automatically synchronizes with the FooCoin network after a connection is established, but this process has not completed yet.</string>
+qt/forms/aboutdialog.ui:   <string>About FooCoin</string>
+qt/forms/aboutdialog.ui:          <string>&lt;b&gt;FooCoin&lt;/b&gt; version</string>
+qt/forms/rpcconsole.ui:   <string>FooCoin - Debug window</string>
+qt/forms/rpcconsole.ui:          <string>Open the FooCoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
+qt/forms/rpcconsole.ui:          <string>Show the foocoin-qt help message to get a list with possible command-line options.</string>
+qt/forms/optionsdialog.ui:          <string>Automatically start FooCoin after logging in to the system.</string>
+qt/forms/optionsdialog.ui:          <string>&amp;Start FooCoin on system login</string>
+qt/forms/optionsdialog.ui:          <string>Automatically open the FooCoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+qt/forms/optionsdialog.ui:          <string>Connect to the FooCoin network through a SOCKS proxy (e.g. when connecting through Tor).</string>
+qt/forms/optionsdialog.ui:            <string>The user interface language can be set here. This setting will take effect after restarting FooCoin.</string>
+qt/forms/optionsdialog.ui:          <string>Whether to show FooCoin addresses in the transaction list or not.</string>
+qt/forms/addressbookpage.ui:      <string>These are your FooCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</string>
+qt/bitcoinstrings.cpp:"rpcuser=foocoinrpc\n"
+qt/bitcoinstrings.cpp:"Cannot obtain a lock on data directory %s.  FooCoin is probably already "
+qt/bitcoinstrings.cpp:"Unable to bind to %s on this computer. FooCoin is probably already running."),
+qt/bitcoinstrings.cpp:"your clock is wrong FooCoin will not work properly."),
+qt/bitcoinstrings.cpp:QT_TRANSLATE_NOOP("bitcoin-core", "FooCoin version"),
+qt/bitcoinstrings.cpp:QT_TRANSLATE_NOOP("bitcoin-core", "FooCoin"),
+qt/bitcoinstrings.cpp:QT_TRANSLATE_NOOP("bitcoin-core", "Error loading wallet.dat: Wallet requires newer version of FooCoin"),
+qt/bitcoinstrings.cpp:QT_TRANSLATE_NOOP("bitcoin-core", "Send command to -server or FooCoin"),
+qt/bitcoinstrings.cpp:QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: foocoin.conf)"),
+qt/bitcoinstrings.cpp:QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: foocoin.pid)"),
+qt/bitcoinstrings.cpp:QT_TRANSLATE_NOOP("bitcoin-core", "Wallet needed to be rewritten: restart FooCoin to complete"),
+qt/bitcoinunits.cpp:    case BTC: return QString("FooCoin");
+qt/bitcoinunits.cpp:    case mBTC: return QString("milliFooCoin (1 / 1,000)");
+qt/bitcoinunits.cpp:    case uBTC: return QString("microFooCoin (1 / 1,000,000)");
+qt/bitcoinunits.cpp://a single unit (.00000001) of FooCoin is called a "wander."
+qt/guiutil.cpp:    if(uri.scheme() != QString("foocoin"))
+qt/guiutil.cpp:    // Convert FooCoin:// to FooCoin:
+qt/guiutil.cpp:    //    Cannot handle this later, because foocoin:// will cause Qt to see the part after // as host,
+qt/guiutil.cpp:    if(uri.startsWith("foocoin://"))
+qt/guiutil.cpp:        uri.replace(0, 11, "foocoin:");
+qt/guiutil.cpp:    return GetSpecialFolderPath(CSIDL_STARTUP) / "FooCoin.lnk";
+qt/guiutil.cpp:    // check for FooCoin.lnk
+qt/guiutil.cpp:    return GetAutostartDir() / "foocoin.desktop";
+qt/guiutil.cpp:        // Write a foocoin.desktop file to the autostart directory:
+qt/guiutil.cpp:        optionFile << "Name=FooCoin\n";
+qt/guiutil.cpp:    header = tr("foocoin-qt") + " " + tr("version") + " " +
+qt/guiutil.cpp:        "  foocoin-qt [" + tr("command-line options") + "]                     " + "\n";
+qt/guiutil.cpp:    setWindowTitle(tr("foocoin-qt"));
+qt/optionsdialog.cpp:        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting FooCoin."), QMessageBox::Ok);
+qt/optionsdialog.cpp:        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting FooCoin."), QMessageBox::Ok);
+qt/qrcodedialog.cpp:    QString ret = QString("foocoin:%1").arg(address);
+rpcdump.cpp:            "importprivkey <foocoin private key> [label]\n"
+rpcdump.cpp:	    "dumpprivkey <foocoin address>\n"
+rpcdump.cpp:	    "Reveals the private key corresponding to <foocoin address>.");
+rpcdump.cpp:	throw JSONRPCError(-5, "Invalid FooCoin address");
+util.cpp:    const char* pszModule = "foocoin";
+util.cpp:    // Windows < Vista: C:\Documents and Settings\Username\Application Data\FooCoin
+util.cpp:    // Windows >= Vista: C:\Users\Username\AppData\Roaming\FooCoin
+util.cpp:    // Mac: ~/Library/Application Support/FooCoin
+util.cpp:    // Unix: ~/.foocoin
+util.cpp:    return GetSpecialFolderPath(CSIDL_APPDATA) / "FooCoin";
+util.cpp:    return pathRet / "FooCoin";
+util.cpp:    return pathRet / ".foocoin";
+util.cpp:    boost::filesystem::path pathConfigFile(GetArg("-conf", "foocoin.conf"));
+util.cpp:        return; // No foocoin.conf file is OK
+util.cpp:        // Don't overwrite existing settings so command line settings override foocoin.conf
+util.cpp:    boost::filesystem::path pathPidFile(GetArg("-pid", "foocoin.pid"));
+util.cpp:                    string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong FooCoin will not work properly.");
+util.cpp:                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("FooCoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);

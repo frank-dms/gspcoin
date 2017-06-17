@@ -1,0 +1,2 @@
+qmake -qt=qt4 "USE_UPNP=-" gspcoin-qt.pro
+make
